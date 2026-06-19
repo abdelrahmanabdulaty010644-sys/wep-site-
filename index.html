@@ -37,7 +37,6 @@
             backdrop-filter: blur(1px);
         }
 
-        /* تعديل الهيدر الاحترافي: الصورة على اليسار والنص على اليمين */
         header {
             max-width: 1140px;
             margin: 0 auto;
@@ -59,8 +58,10 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 12px; /* تصميم مربعي عصري بحواف ناعمة يناسب البدلة */
+            border-radius: 12px;
             object-fit: cover;
+            /* تعديل لإظهار أعلى الصورة (الرأس والدماغ) بشكل كامل دون قطع */
+            object-position: top; 
             border: 2px solid var(--primary);
             box-shadow: 0 8px 30px var(--primary-glow);
             position: relative;
@@ -159,6 +160,21 @@
             color: var(--text-muted);
             font-size: 1.1rem;
             text-align: justify;
+        }
+
+        /* تنسيق مميز للجزء التعليمي */
+        .education-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 180, 216, 0.15);
+            border: 1px solid var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
         }
 
         .skills-grid {
@@ -289,7 +305,7 @@
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
@@ -298,12 +314,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 1rem 2.2rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             color: white;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
@@ -314,6 +330,8 @@
         }
 
         .linkedin-btn { background-color: #0077B5; }
+        .github-btn { background-color: #24292e; border: 1px solid rgba(255,255,255,0.2); }
+        .phone-btn { background-color: #25D366; }
         .email-btn { background-color: #D14836; }
 
         footer {
@@ -343,9 +361,14 @@
         <section>
             <h2><i class="fas fa-chart-line"></i> 🚀 About Me</h2>
             <div class="glass-card about-box">
-                <p>Data Analyst specialist aiming to organize data and dive deep into details to deliver accurate and reliable insights. I carefully review every analysis before presenting it to ensure the results are clear and trustworthy, helping clients make better data-driven decisions. I also enjoy providing practical suggestions that can improve workflow and business strategy support.</p>
+                <p>Data Analyst specialist aiming to organize data and dive deep into details to deliver accurate and reliable insights. I carefully review every analysis before presenting it to ensure the results are clear and trustworthy, helping clients make better data-driven decisions. I also enjoy providing practical suggestions that can improve workflow and support.</p>
                 
-                <h3 style="margin: 2rem 0 0.75rem 0; font-size: 1.2rem; color: var(--accent);"><i class="fas fa-tools"></i> Core Tech Stack & Toolkit</h3>
+                <div class="education-badge">
+                    <i class="fas fa-university"></i> 
+                    3rd Year Student at Faculty of Computers and Artificial Intelligence, Beni-Suef National University (BSNU)
+                </div>
+
+                <h3 style="margin: 2.5rem 0 0.75rem 0; font-size: 1.2rem; color: var(--accent);"><i class="fas fa-tools"></i> Core Tech Stack & Toolkit</h3>
                 <div class="skills-grid">
                     <div class="skill-card"><i class="fas fa-database"></i> SQL / PostgreSQL</div>
                     <div class="skill-card"><i class="fas fa-chart-bar"></i> Power BI</div>
@@ -456,8 +479,14 @@
                 I am actively seeking new opportunities, enterprise freelance analytics contracts, or business intelligence collaborations. Let's make data-driven growth happen.
             </p>
             <div class="contact-links">
+                <a href="https://github.com/abdelrahmanabdulaty010644-sys" target="_blank" class="contact-btn github-btn">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
                 <a href="https://www.linkedin.com/in/abdelrahman-mohamed-1034b7387/" target="_blank" class="contact-btn linkedin-btn">
                     <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="https://wa.me/201064412475" target="_blank" class="contact-btn phone-btn">
+                    <i class="fab fa-whatsapp"></i> +20 1064412475
                 </a>
                 <a href="mailto:abdelrahman.abdulaty@gmail.com" class="contact-btn email-btn">
                     <i class="fas fa-envelope"></i> Contact via Email
