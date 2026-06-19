@@ -37,46 +37,42 @@
             backdrop-filter: blur(1px);
         }
 
+        /* تعديل الهيدر الاحترافي: الصورة على اليسار والنص على اليمين */
         header {
-            padding: 4rem 1rem 3rem 1rem;
-            text-align: center;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 3rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 3rem;
             position: relative;
         }
 
         .profile-container {
             position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 1.5rem auto;
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
+            border-radius: 12px; /* تصميم مربعي عصري بحواف ناعمة يناسب البدلة */
             object-fit: cover;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 25px var(--primary-glow);
+            border: 2px solid var(--primary);
+            box-shadow: 0 8px 30px var(--primary-glow);
             position: relative;
             z-index: 2;
         }
 
-        .profile-container::after {
-            content: '';
-            position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
-            border-radius: 50%;
-            border: 1px dashed var(--accent);
-            animation: rotate-clockwise 20s linear infinite;
-        }
-
-        @keyframes rotate-clockwise {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .profile-text-wrapper {
+            text-align: left;
         }
 
         .profile-title {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
@@ -87,21 +83,41 @@
 
         .profile-subtitle {
             color: var(--accent);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .profile-subtitle::before, .profile-subtitle::after {
+        .profile-subtitle::after {
             content: '';
-            width: 30px;
+            width: 50px;
             height: 2px;
             background-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding-top: 3rem;
+            }
+            .profile-text-wrapper {
+                text-align: center;
+            }
+            .profile-subtitle {
+                justify-content: center;
+            }
+            .profile-subtitle::before {
+                content: '';
+                width: 30px;
+                height: 2px;
+                background-color: var(--primary);
+            }
         }
 
         .container {
@@ -202,4 +218,258 @@
         .project-img-wrapper {
             width: 100%;
             height: 200px;
-            overflow: hidden
+            overflow: hidden;
+            position: relative;
+            background: #04080e;
+        }
+
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.85rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: block;
+            background: linear-gradient(135deg, var(--primary) 0%, #00598a 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0088cf 0%, var(--primary) 100%);
+            box-shadow: 0 6px 16px rgba(0, 119, 181, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .connect-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .connect-section h2 {
+            justify-content: center;
+            border-left: none;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+
+        .linkedin-btn { background-color: #0077B5; }
+        .email-btn { background-color: #D14836; }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(0, 119, 181, 0.15);
+            background: rgba(4, 8, 14, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <img class="profile-img" src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/WhatsApp%20Image%202026-03-25%20at%209.45.20%20AM.jpeg" alt="Abdelrahman Mohamed">
+        </div>
+        <div class="profile-text-wrapper">
+            <h1 class="profile-title">Abdelrahman Mohamed</h1>
+            <p class="profile-subtitle">Data Analyst Specialist</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2><i class="fas fa-chart-line"></i> 🚀 About Me</h2>
+            <div class="glass-card about-box">
+                <p>Data Analyst specialist aiming to organize data and dive deep into details to deliver accurate and reliable insights. I carefully review every analysis before presenting it to ensure the results are clear and trustworthy, helping clients make better data-driven decisions. I also enjoy providing practical suggestions that can improve workflow and business strategy support.</p>
+                
+                <h3 style="margin: 2rem 0 0.75rem 0; font-size: 1.2rem; color: var(--accent);"><i class="fas fa-tools"></i> Core Tech Stack & Toolkit</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fas fa-database"></i> SQL / PostgreSQL</div>
+                    <div class="skill-card"><i class="fas fa-chart-bar"></i> Power BI</div>
+                    <div class="skill-card"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
+                    <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-folder-open"></i> 📂 Featured BI & Data Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/marketing/main/Screenshot%202026-05-13%20122244.png" alt="Marketing Campaign Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketing Campaign & Customer Behavior Analytics</h3>
+                        <p class="project-desc">Advanced marketing analytics project evaluating a $40M campaign across multiple channels. Combined SQL for granular cohort and behavioral analysis with Power BI interactive scatter plots to unmask middle-income customer purchasing intent.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/marketing" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/Executive-Sales-Dashboard-Global-Performance-Profitability-Analysi/main/1761944165385%20(2).jpeg" alt="Executive Sales Dashboard View">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Executive Global Sales & Profitability Dashboard</h3>
+                        <p class="project-desc">Enterprise-grade Power BI dashboard analyzing a $110.34M global sales portfolio. Built custom DAX metrics to monitor sales, profits, and margin trends. Discovered macro growth insights across categories and regional attributes.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/Executive-Sales-Dashboard-Global-Performance-Profitability-Analysi" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/proudect-review-analysis/main/Screenshot%202026-05-13%20124108.png" alt="Amazon Product Analysis Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Amazon Product Reviews Data Quality Analytics</h3>
+                        <p class="project-desc">Advanced data-quality project auditing a 1.5M row Amazon dataset ($161M revenue). Engineered robust DAX filtering logic to isolate unverified reviews, shifting strategic business insight toward verified sales sectors.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/proudect-review-analysis" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/Freelance-Project-Music-Sales-Analysis-Dashboard-Excel/main/Screenshot%202026-06-19%20233753.png" alt="Music Revenue Excel Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Music Genre vs. Beverage Revenue Analysis</h3>
+                        <p class="project-desc">A statistical correlation project in Excel investigating how entertainment parameters (genres like EDM/Hip-Hop & DJ scheduling) influence operational beverage revenue. Developed interactive dual-axis trends.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/Freelance-Project-Music-Sales-Analysis-Dashboard-Excel" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/Social-Media-Performance-Dashbord/main/Screenshot%202026-06-18%20161311.png" alt="Social Media Performance Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media Engagement Analysis</h3>
+                        <p class="project-desc">A marketing intelligence project evaluating over half a billion rows of cross-platform traffic. Decoded the content length paradox across Facebook, Instagram, and Twitter to maximize engagement rates.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/Social-Media-Performance-Dashbord" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/phone_Analysis/main/Screenshot%202026-06-18%20153614.png" alt="Global Mobile Phone Analysis Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Global Mobile Phone Market Analysis</h3>
+                        <p class="project-desc">An end-to-end data engineering and BI project. Performed live web scraping via Power BI Web Connector, executing pipeline processing in Power Query to track historical market share anomalies.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/phone_Analysis" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/HR-Analsys/main/Screenshot%202026-06-12%20002524.png" alt="HR Analytics Dashboard View">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HR Analytics Workforce Dashboard</h3>
+                        <p class="project-desc">A dynamic Power BI deployment focusing on operational workforce logistics for 900+ employees. Visualizes metrics across corporate salary distribution, corporate diversity indices, and performance incentives.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/HR-Analsys" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/Sales-Performance-Logistics-Dashboard-My-First-Power-BI-Project-/main/1761772280070%20(1).jpeg" alt="Sales and Logistics Dashboard View">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sales Performance & Logistics Dashboard</h3>
+                        <p class="project-desc">Foundational Power BI project implementing full lifecycle pipeline creation. Managed multi-source datasets via Power Query to map metrics governing delivery distribution, transit models, and gross profit margins.</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/Sales-Performance-Logistics-Dashboard-My-First-Power-BI-Project-" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="glass-card connect-section">
+            <h2><i class="fas fa-network-wired"></i> Let's Connect & Collaborate</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 0 auto; font-size: 1.05rem;">
+                I am actively seeking new opportunities, enterprise freelance analytics contracts, or business intelligence collaborations. Let's make data-driven growth happen.
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/abdelrahman-mohamed-1034b7387/" target="_blank" class="contact-btn linkedin-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="mailto:abdelrahman.abdulaty@gmail.com" class="contact-btn email-btn">
+                    <i class="fas fa-envelope"></i> Contact via Email
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Abdelrahman Mohamed | Designed with Advanced Analytical Aesthetics. 🚀</p>
+    </footer>
+
+</body>
+</html>
