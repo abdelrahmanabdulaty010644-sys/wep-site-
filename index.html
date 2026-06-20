@@ -60,7 +60,6 @@
             height: 100%;
             border-radius: 12px;
             object-fit: cover;
-            /* تعديل لإظهار أعلى الصورة (الرأس والدماغ) بشكل كامل دون قطع */
             object-position: top; 
             border: 2px solid var(--primary);
             box-shadow: 0 8px 30px var(--primary-glow);
@@ -162,7 +161,6 @@
             text-align: justify;
         }
 
-        /* تنسيق مميز للجزء التعليمي */
         .education-badge {
             display: inline-flex;
             align-items: center;
@@ -206,13 +204,13 @@
             display: block;
         }
 
-        .projects-grid {
+        .projects-grid, .certs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2.5rem;
         }
 
-        .project-card {
+        .project-card, .cert-card {
             background: var(--card-glass);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -225,13 +223,13 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        .project-card:hover {
+        .project-card:hover, .cert-card:hover {
             transform: translateY(-8px);
             border-color: var(--accent);
             box-shadow: 0 12px 24px rgba(0, 119, 181, 0.25);
         }
 
-        .project-img-wrapper {
+        .project-img-wrapper, .cert-img-wrapper {
             width: 100%;
             height: 200px;
             overflow: hidden;
@@ -239,32 +237,32 @@
             background: #04080e;
         }
 
-        .project-img-wrapper img {
+        .project-img-wrapper img, .cert-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .project-card:hover .project-img-wrapper img {
+        .project-card:hover .project-img-wrapper img, .cert-card:hover .cert-img-wrapper img {
             transform: scale(1.06);
         }
 
-        .project-content {
+        .project-content, .cert-content {
             padding: 2rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .project-title {
+        .project-title, .cert-title {
             font-size: 1.35rem;
             margin-bottom: 0.85rem;
             color: var(--text-main);
             font-weight: 600;
         }
 
-        .project-desc {
+        .project-desc, .cert-issuer {
             color: var(--text-muted);
             font-size: 0.98rem;
             margin-bottom: 2rem;
@@ -467,6 +465,68 @@
                         <h3 class="project-title">Sales Performance & Logistics Dashboard</h3>
                         <p class="project-desc">Foundational Power BI project implementing full lifecycle pipeline creation. Managed multi-source datasets via Power Query to map metrics governing delivery distribution, transit models, and gross profit margins.</p>
                         <a href="https://github.com/abdelrahmanabdulaty010644-sys/Sales-Performance-Logistics-Dashboard-My-First-Power-BI-Project-" target="_blank" class="btn">Explore Repository</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-award"></i> 🏅 Certifications & Achievements</h2>
+            <div class="certs-grid">
+
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/1761594600144.jpeg" alt="Data Analytics Certification">
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Professional Data Analytics Certification</h3>
+                        <p class="cert-issuer">Verified Credentials & Advanced Technical Expertise</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/wep-site-/blob/main/1761594600144.jpeg" target="_blank" class="btn">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/1762520535898.jpeg" alt="Business Intelligence Certification">
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Advanced Business Intelligence Specialist</h3>
+                        <p class="cert-issuer">Data Transformation, Modeling & Dashboard Design</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/wep-site-/blob/main/1762520535898.jpeg" target="_blank" class="btn">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/1762616968252.jpeg" alt="SQL & Database Management Certification">
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">SQL & Relational Database Engineering</h3>
+                        <p class="cert-issuer">Advanced Querying, Data Auditing & Insights Extraction</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/wep-site-/blob/main/1762616968252.jpeg" target="_blank" class="btn">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/1765208754826.jpeg" alt="Data Science Foundation Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Data Science Foundations & Strategy</h3>
+                        <p class="cert-issuer">Statistical Inference & Core Analytical Models</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/wep-site-/blob/main/1765208754826.jpeg" target="_blank" class="btn">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="https://raw.githubusercontent.com/abdelrahmanabdulaty010644-sys/wep-site-/main/1770850431263.jpeg" alt="Executive Analytics Mastery">
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Executive Analytics & Data Quality Auditing</h3>
+                        <p class="cert-issuer">Enterprise Pipeline Design & Business Optimization</p>
+                        <a href="https://github.com/abdelrahmanabdulaty010644-sys/wep-site-/blob/main/1770850431263.jpeg" target="_blank" class="btn">View Certificate</a>
                     </div>
                 </div>
 
